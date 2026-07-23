@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baptiste Hernandez | Soutien Scolaire & Coaching Prépa (HEC x ENSAE)</title>
+    <meta name="description" content="Cours particuliers et soutien scolaire par Baptiste Hernandez, étudiant en M1 double diplôme HEC Paris x ENSAE Paris. Accompagnement de la 2de à la prépa ECG.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #C85A32;
+            --primary-hover: #B04A24;
+            --primary-light: #FDF4F0;
+            --bg-warm: #FAF6F0;
+            --card-bg: #FFFFFF;
+            --text-main: #2C2825;
+            --text-muted: #66605B;
+            --border-color: #EADFD5;
+            --shadow-sm: 0 4px 12px rgba(200, 90, 50, 0.05);
+            --shadow-md: 0 8px 24px rgba(200, 90, 50, 0.08);
+            --radius-lg: 16px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-warm);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 20px 0;
+            background-color: rgba(250, 246, 240, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-badge {
+            background-color: var(--primary);
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .btn-contact-nav {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-contact-nav:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .hero {
+            padding: 60px 0 40px;
+        }
+
+        .tag-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(200, 90, 50, 0.2);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .hero-title span {
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .banner-card {
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-top: 20px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-card::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .banner-subtitle {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.4;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 12px;
+        }
+
+        .banner-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(200, 90, 50, 0.3);
+        }
+
+        .card-icon {
+            width: 54px;
+            height: 54px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .card-text {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .methode-box {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .atouts-list {
+            list-style: none;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .atout-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .atout-icon {
+            color: var(--primary);
+            background: var(--primary-light);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+
+        .contact-card {
+            background-color: var(--text-main);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            margin-top: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 18px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--primary);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-info .label {
+            font-size: 0.8rem;
+            color: #A09890;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .contact-info .value {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .banner-card {
+                padding: 24px;
+            }
+            .contact-card {
+                padding: 28px;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="brand">
+                Baptiste Hernandez
+                <span class="brand-badge">HEC × ENSAE</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#methode" class="nav-link">Méthode</a>
+                <a href="#accompagnement" class="nav-link">Accompagnement</a>
+                <a href="#atouts" class="nav-link">Atouts</a>
+                <a href="#contact" class="btn-contact-nav">Me contacter</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="tag-pill">
+                <i class="fa-solid fa-graduation-cap"></i>
+                SOUTIEN SCOLAIRE ÉTUDIANT
+            </div>
+            <h1 class="hero-title">
+                Par un étudiant, <br><span>pour des étudiants.</span>
+            </h1>
+
+            <div class="banner-card">
+                <div class="banner-subtitle">
+                    <i class="fa-solid fa-award" style="margin-right: 8px;"></i>
+                    Étudiant en M1 double diplôme HEC × ENSAE (Institut Polytechnique de Paris) & Ancien colleur en ESH au Lycée Hoche
+                </div>
+                <p class="banner-text">
+                    Je connais parfaitement les exigences de ces filières d'excellence. 
+                    Je transmets aux étudiants des connaissances, mais aussi une méthode de travail structurée que j'ai développée au fil de ces années.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="accompagnement">
+            <div class="section-header">
+                <p class="section-subtitle">Sur-mesure & Proximité</p>
+                <h2 class="section-title">Un accompagnement personnalisé</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-laptop-house"></i>
+                    </div>
+                    <h3 class="card-title">Cours en ligne / à domicile</h3>
+                    <p class="card-text">
+                        Formats souples et adaptés en fonction de tes préférences et de la distance géographique.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h3 class="card-title">Suivi particulier</h3>
+                    <p class="card-text">
+                        Un accompagnement individuel, ciblé, adapté et plus personnel entre étudiants pour instaurer un climat de confiance.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Une méthode efficace</h3>
+                    <p class="card-text">
+                        <strong>8 élèves accompagnés avec succès.</strong> De la classe de Seconde jusqu'à la 2<sup>ème</sup> année de classe préparatoire ECG.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="methode">
+            <div class="grid-2">
+                <div class="methode-box">
+                    <p class="section-subtitle">Pédagogie</p>
+                    <h2 class="section-title" style="margin-bottom: 20px;">Ma Méthode</h2>
+                    <p class="card-text" style="font-size: 1.05rem; margin-bottom: 16px;">
+                        Mon approche commence par un <strong>bilan réflexif</strong> : ensemble, nous identifions tes points forts, tes axes de progression et tes objectifs.
+                    </p>
+                    <p class="card-text" style="font-size: 1.05rem;">
+                        Tout au long de l'accompagnement, je te transmets des <strong>techniques d'apprentissage concrètes</strong> et des <strong>ressources ciblées</strong> pour que tu gagnes durablement en autonomie — pas seulement en notes.
+                    </p>
+                </div>
+
+                <div class="methode-box" id="atouts" style="background-color: var(--primary-light); border-color: rgba(200, 90, 50, 0.2);">
+                    <p class="section-subtitle">Pourquoi ce choix ?</p>
+                    <h2 class="section-title" style="margin-bottom: 20px;">Les Atouts</h2>
+                    <ul class="atouts-list">
+                        <li class="atout-item">
+                            <span class="atout-icon"><i class="fa-solid fa-check"></i></span>
+                            Exigence académique & Rigueur
+                        </li>
+                        <li class="atout-item">
+                            <span class="atout-icon"><i class="fa-solid fa-check"></i></span>
+                            Proximité & Compréhension entre étudiants
+                        </li>
+                        <li class="atout-item">
+                            <span class="atout-icon"><i class="fa-solid fa-check"></i></span>
+                            Horaires flexibles & Flexibilité d'organisation
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="contact-card">
+                <p class="section-subtitle" style="color: #E8805A;">Contact direct</p>
+                <h2 class="section-title" style="color: white;">Me contacter & Réserver un cours</h2>
+                <p style="margin-top: 10px; color: #D0C8C0;">N'hésite pas à me contacter par téléphone, mail ou message pour échanger sur ton besoin.</p>
+
+                <div class="contact-grid">
+                    <a href="tel:0651116146" class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contact-info">
+                            <div class="label">Téléphone</div>
+                            <div class="value">06 51 11 61 46</div>
+                        </div>
+                    </a>
+
+                    <a href="mailto:baptiste.hernandez@hec.edu" class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <div class="label">E-mail</div>
+                            <div class="value" style="font-size: 0.9rem;">baptiste.hernandez@hec.edu</div>
+                        </div>
+                    </a>
+
+                    <div class="contact-item" style="cursor: default;">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contact-info">
+                            <div class="label">Localisation</div>
+                            <div class="value">Jouy-en-Josas / En ligne</div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.linkedin.com" target="_blank" class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-info">
+                            <div class="label">Réseau Pro</div>
+                            <div class="value">Profil LinkedIn</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© Baptiste Hernandez — Cours particuliers & Soutien scolaire d'excellence</p>
+        </div>
+    </footer>
+
+</body>
+</html>
