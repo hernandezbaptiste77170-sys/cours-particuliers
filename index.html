@@ -387,6 +387,16 @@
                 display: none;
             }
         }
+        /* Style pour la petite photo en haut à droite */
+        .profile-thumb-right {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%; /* Image ronde */
+            object-fit: cover;
+            border: 2px solid var(--primary); /* Contour orange */
+            box-shadow: var(--shadow-sm);
+            margin-top: 6px;
+        }
     </style>
 </head>
 <body>
@@ -408,14 +418,18 @@
 
     <main class="container">
         <section class="hero">
-            <div class="tag-pill">
-                <i class="fa-solid fa-graduation-cap"></i>
-                SOUTIEN SCOLAIRE ÉTUDIANT
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <div class="tag-pill">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        SOUTIEN SCOLAIRE ÉTUDIANT
+                    </div>
+                    <h1 class="hero-title">
+                        Par un étudiant, <br><span>pour des étudiants.</span>
+                    </h1>
+                </div>
+                <img src="photo.jpg" alt="Baptiste Hernandez" class="profile-thumb-right" style="width: 64px; height: 64px;">
             </div>
-            <h1 class="hero-title">
-                Par un étudiant, <br><span>pour des étudiants.</span>
-            </h1>
-
             <div class="banner-card">
                 <div class="banner-subtitle">
                     <i class="fa-solid fa-award" style="margin-right: 8px;"></i>
@@ -430,8 +444,8 @@
 
         <section class="section" id="accompagnement">
             <div class="section-header">
-                <p class="section-subtitle">Sur-mesure & Proximité</p>
                 <h2 class="section-title">Un accompagnement personnalisé</h2>
+                <p class="section-subtitle">Je t'accompagne de la classe de Seconde jusqu'à la 2ème année de classe préparatoire économique</p>
             </div>
 
             <div class="grid-3">
@@ -461,7 +475,7 @@
                     </div>
                     <h3 class="card-title">Une méthode efficace</h3>
                     <p class="card-text">
-                        <strong>8 élèves accompagnés avec succès depuis ma terminale.</strong> les cours vont de la classe de Seconde jusqu'à la 2<sup>ème</sup> année de classe préparatoire ECG.
+                        <strong>8 élèves accompagnés avec succès depuis ma terminale.</strong> Aussi bien en mathématique qu'en économie ou en SES.
                     </p>
                 </div>
             </div>
